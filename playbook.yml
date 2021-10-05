@@ -1,0 +1,44 @@
+- name: RHA124 Chapter 2 Additional Exercises
+  hosts: localhost
+  become: yes
+  vars:
+    student: student
+    ansible_become_password: student
+    redhat_pass: redhat
+    student_pass: student
+  tasks:
+    - name: Create Directories
+      file:
+        path: "/home/student/Desktop/rh124/{{ item }}"
+        state: directory
+        owner: student
+        group: student
+        mode: '0755'
+      loop:
+        - chpt2
+        - chpt3
+        - chpt4
+
+    - name:  Download EXE file
+      get_url:
+        url: https://the.earth.li/~sgtatham/putty/latest/w32/putty.exe
+        dest: /home/student/Desktop/rh124/chpt2/
+        owner: student
+        group: student
+        mode: '0755'
+
+    - name:  Download PNG file
+      get_url:
+        url: https://raw.githubusercontent.com/saenzjonathan11/rh124-extra-exercises/main/chpt2/rha-logo-new.png
+        dest: /home/student/Desktop/rh124/chpt2
+        owner: student
+        group: student
+        mode: '0755'
+
+    - name:  Download lines.txt
+      get_url:
+        url: https://raw.githubusercontent.com/saenzjonathan11/rh124-extra-exercises/main/chpt2/lines.txt
+        dest: /home/student/Desktop/rh124/chpt2
+        owner: student
+        group: student
+        mode: '0755'

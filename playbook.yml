@@ -42,3 +42,40 @@
         owner: student
         group: student
         mode: '0755'
+
+    - name: "Create files directory. Chpt 3."
+      file:
+        path: "/home/student/Desktop/rh124/chpt3/files"
+        state: directory
+        owner: student
+        group: student
+        mode: '0755'
+
+    - name: "Create cpALL directory. Chpt 3."
+      file:
+        path: "/home/student/Desktop/rh124/chpt3/cpALL"
+        state: directory
+        owner: student
+        group: student
+        mode: '0755'
+
+    - name: "Create mvALL directory. Chpt 3."
+      file:
+        path: "/home/student/Desktop/rh124/chpt3/mvALL"
+        state: directory
+        owner: student
+        group: student
+        mode: '0755'
+
+    - name: "Create file#.txt. Chpt 3."
+      file:
+        path: "/home/student/Desktop/rh125/chpt3/{{ item }}"
+        state: directory
+        owner: student
+        group: student
+        mode: '0755'
+      loop:
+        - file1.txt
+        - file2.txt
+        - file3.txt
+        - file4.txt

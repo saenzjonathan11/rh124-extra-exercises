@@ -70,7 +70,7 @@
     - name: "Create file#.txt. Chpt 3."
       file:
         path: "/home/student/Desktop/rh125/chpt3/{{ item }}"
-        state: directory
+        state: touch
         owner: student
         group: student
         mode: '0755'
